@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup</title>
+    <link rel="stylesheet" href="stylesign.css">
+</head>
+<body>
+    <div class="signup-container">
+        <div class="signup-box">
+            <h2>Signup</h2>
+            <form id="signup-form">
+                <div class="input-group">
+                    <label for="signup-username">Username</label>
+                    <input type="text" id="signup-username" name="username" placeholder="Masukkan username" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="signup-email">Email</label>
+                    <input type="email" id="signup-email" name="email" placeholder="Masukkan email" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="signup-password">Password</label>
+                    <input type="password" id="signup-password" name="password" placeholder="Masukkan password" required>
+                </div>
+
+                <button type="submit" class="signup-btn">Signup</button>
+
+                <p class="login-text">Sudah punya akun? <a href="login.html">Login di sini</a></p>
+            </form>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        // Fungsi untuk signup
+        $('#signup-form').submit(function(event) {
+            event.preventDefault();
+
+            // Ambil nilai input
+            const username = $('#signup-username').val();
+            const email = $('#signup-email').val();
+            const password = $('#signup-password').val();
+
+            // Simpan data username dan password ke localStorage
+            localStorage.setItem('username', username);
+            localStorage.setItem('password', password);
+
+            alert('Signup berhasil! Anda akan dialihkan ke halaman login.');
+
+            // Arahkan ke halaman login setelah signup berhasil
+            window.location.href = 'login.html'; // Redirect ke halaman login
+        });
+    </script>
+</body>
+</html>

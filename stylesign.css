@@ -1,0 +1,107 @@
+/* Global Styling */
+body, html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    background-color: #f9f9f9;
+    height: 100%;
+}
+
+/* Styling untuk signup dan login container */
+.signup-container, .login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(to right, #2f2e81, #8360c3);
+}
+
+.signup-box, .login-box {
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0px 8px 30px rgba(0, 0, 0, 0.1);
+    width: 400px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.signup-box:hover, .login-box:hover {
+    transform: scale(1.02);
+    box-shadow: 0px 12px 40px rgba(0, 0, 0, 0.2);
+}
+
+.signup-box h2, .login-box h2 {
+    margin-bottom: 20px;
+    font-size: 28px;
+    color: #2f2e81;
+}
+
+/* Input styling */
+.input-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.input-group label {
+    font-size: 14px;
+    color: #333;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    margin-top: 5px;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+}
+
+.input-group input:focus {
+    border-color: #2f2e81;
+    outline: none;
+}
+
+/* Button styling */
+.signup-btn, .login-btn {
+    width: 100%;
+    padding: 12px;
+    background-color: #2f2e81;
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.signup-btn:hover, .login-btn:hover {
+    background-color: #ffc107;
+    color: #2f2e81;
+}
+
+/* Signup and Login link styling */
+.login-text, .signup-text {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #333;
+}
+
+.login-text a, .signup-text a {
+    color: #2f2e81;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.login-text a:hover, .signup-text a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive styling */
+@media (max-width: 768px) {
+    .signup-box, .login-box {
+        width: 90%;
+    }
+}

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="stylesign.css">
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-box">
+            <h2>Login</h2>
+            <form id="login-form">
+                <div class="input-group">
+                    <label for="login-username">Username</label>
+                    <input type="text" id="login-username" name="username" placeholder="Masukkan username" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="login-password">Password</label>
+                    <input type="password" id="login-password" name="password" placeholder="Masukkan password" required>
+                </div>
+
+                <button type="submit" class="login-btn">Login</button>
+
+                <p class="signup-text">Belum punya akun? <a href="signup.html">Signup di sini</a></p>
+            </form>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        // Fungsi untuk login
+        $('#login-form').submit(function(event) {
+            event.preventDefault();
+
+            // Ambil nilai input
+            const inputUsername = $('#login-username').val();
+            const inputPassword = $('#login-password').val();
+
+            // Ambil username dan password dari localStorage
+            const storedUsername = localStorage.getItem('username');
+            const storedPassword = localStorage.getItem('password');
+
+            // Cek apakah username dan password sesuai
+            if (inputUsername === storedUsername && inputPassword === storedPassword) {
+                alert('Login berhasil! Anda akan dialihkan ke halaman utama.');
+                // Redirect ke halaman utama setelah login berhasil
+                window.location.href = 'index.html'; // Ganti dengan halaman tujuan Anda
+            } else {
+                alert('Username atau password salah');
+            }
+        });
+    </script>
+</body>
+</html>
